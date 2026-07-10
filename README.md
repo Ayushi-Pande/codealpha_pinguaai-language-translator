@@ -152,7 +152,7 @@ This project is licensed under the MIT License.
 
 **GitHub:** https://github.com/Ayushi-Pande
 
-**LinkedIn:** [LinkedIn Profile Link]
+**LinkedIn:** www.linkedin.com/in/ayushi-pandey-ai
 
 **Email:** ayushipande222161@gmail.com
 
