@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinguaAI — Language Translation Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="neural-canvas"></canvas>
+
+<div class="app">
+  <header>
+    <div class="logo">
+      <div class="logo-icon">🌐</div>
+      <div>
+        <span>Pingua<em>AI</em></span>
+      </div>
+    </div>
+    <div class="header-badge">CodeAlpha · AI Internship</div>
+  </header>
+  <div class="glow-line"></div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Powered by AI · 100+ Languages</div>
+    <h1>Translate anything,<br><span class="grad">instantly & intelligently</span></h1>
+    <p>Context-aware translation that understands nuance, tone, and meaning — not just words.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" id="stat-count">0</div>
+      <div class="stat-label">Translations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">AI</div>
+      <div class="stat-label">Powered</div>
+    </div>
+  </div>
+
+  <div class="translator-wrap">
+
+    <!-- Language bar -->
+    <div class="lang-bar">
+      <div class="lang-selector" data-flag="🔍" id="src-flag-wrap">
+        <select id="src-lang">
+          <option value="auto">Auto Detect</option>
+        </select>
+      </div>
+
+      <button class="swap-btn" id="swap-btn" title="Swap languages">⇄</button>
+
+      <div class="lang-selector" data-flag="🌐" id="tgt-flag-wrap">
+        <select id="tgt-lang">
+        </select>
+      </div>
+    </div>
+
+    <!-- Panels -->
+    <div class="panels">
+      <!-- Source -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-label">Source Text</span>
+          <div class="panel-tools">
+            <button class="tool-btn" id="tts-src-btn" title="Listen">🔊</button>
+          </div>
+        </div>
+        <textarea id="src-text" placeholder="Type or paste text to translate…" maxlength="5000" spellcheck="true"></textarea>
+        <div class="panel-footer">
+          <span class="char-count" id="char-count">0 / 5000</span>
+          <span class="detect-badge" id="detect-badge">Detecting…</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="panel-divider">
+        <div class="divider-dot">AI</div>
+      </div>
+
+      <!-- Target -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-label">Translation</span>
+          <div class="panel-tools">
+            <button class="tool-btn" id="copy-btn" title="Copy translation">📋</button>
+            <button class="tool-btn" id="tts-tgt-btn" title="Listen">🔊</button>
+          </div>
+        </div>
+        <div class="output-area" id="output-area">
+          <span class="output-placeholder" id="output-placeholder">Translation will appear here…</span>
+        </div>
+        <div class="panel-footer">
+          <div class="confidence-bar-wrap" id="confidence-wrap" style="display:none">
+            <span>Confidence</span>
+            <div class="confidence-bar"><div class="confidence-fill" id="confidence-fill"></div></div>
+            <span id="confidence-label">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TTS Visualizer -->
+    <div class="tts-visualizer" id="tts-vis">
+      <div class="tts-bar" style="animation-delay:0s"></div>
+      <div class="tts-bar" style="animation-delay:0.1s"></div>
+      <div class="tts-bar" style="animation-delay:0.2s"></div>
+      <div class="tts-bar" style="animation-delay:0.05s"></div>
+      <div class="tts-bar" style="animation-delay:0.15s"></div>
+      <div class="tts-bar" style="animation-delay:0.25s"></div>
+      <div class="tts-bar" style="animation-delay:0.08s"></div>
+      <div class="tts-bar" style="animation-delay:0.18s"></div>
+      <div class="tts-bar" style="animation-delay:0.3s"></div>
+      <div class="tts-bar" style="animation-delay:0.12s"></div>
+      <div class="tts-bar" style="animation-delay:0.22s"></div>
+      <div class="tts-bar" style="animation-delay:0.07s"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-row">
+      <button class="btn-translate" id="translate-btn">
+        <span class="btn-text">✨ Translate</span>
+      </button>
+      <button class="btn-clear" id="clear-btn">Clear</button>
+    </div>
+
+    <!-- History -->
+    <div class="history-section" id="history-section" style="display:none">
+      <div class="section-header">
+        <span class="section-title">Recent Translations</span>
+        <button class="btn-clear-history" id="clear-history-btn">Clear all</button>
+      </div>
+      <div class="history-grid" id="history-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
