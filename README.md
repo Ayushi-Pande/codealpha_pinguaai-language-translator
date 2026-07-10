@@ -148,13 +148,13 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Developer
 
-**Name:** [Your Name]
+**Name:** Ayushi Pandey
 
-**GitHub:** [GitHub Profile Link]
+**GitHub:** https://github.com/Ayushi-Pande
 
 **LinkedIn:** [LinkedIn Profile Link]
 
-**Email:** [Email Address]
+**Email:** ayushipande222161@gmail.com
 
 ---
 
